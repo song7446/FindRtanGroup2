@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DifficultyButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject DifficultyUI;
     public void Difficulty()
     {
-        SceneManager.LoadScene("DifficultyScene");
+        DifficultyUI.SetActive(true);
     }
 }
