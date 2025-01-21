@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
+    bool CanOpen;
     public int idx = 0;
 
     public GameObject front;
@@ -12,14 +14,20 @@ public class Card : MonoBehaviour
     public Animator animator;
 
     public SpriteRenderer frontImage;
+    public SpriteRenderer BackImage;
+    public Text text;
 
     AudioSource audioSource;
     public AudioClip clip;
 
+    ParticleSystem Particle;
+
     // Start is called before the first frame update
     void Start()
     {
+        CanOpen = true;
         audioSource = GetComponent<AudioSource>();
+        Particle = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -36,38 +44,51 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
-        if (GameManager.Instance.secondCard != null) return;
-
-        audioSource.PlayOneShot(clip);
-
-        animator.SetBool("IsOpen", true);
-        front.SetActive(true);
-        back.SetActive(false);
-
-        // firstCard가 비었다면
-        if (GameManager.Instance.firstCard == null)
+        if (CanOpen != false)
         {
-            // firstCard에 내 정보를 넘겨준다.
-            GameManager.Instance.firstCard = this;
-        }
-        else
-        {
-            // firstCard가 비어있지 않다면
-            // secondCard에 내 정보를 넘겨준다
-            GameManager.Instance.secondCard = this;
-            GameManager.Instance.Matched();
+            CanOpen = false;
+            if (GameManager.Instance.secondCard != null) return;
+
+            audioSource.PlayOneShot(clip);
+
+            animator.SetBool("IsOpen", true);
+
+            // firstCard가 비었다면
+            if (GameManager.Instance.firstCard == null)
+            {
+                // firstCard에 내 정보를 넘겨준다.
+                GameManager.Instance.firstCard = this;
+            }
+            else
+            {
+                // firstCard가 비어있지 않다면
+                // secondCard에 내 정보를 넘겨준다
+                GameManager.Instance.secondCard = this;
+                GameManager.Instance.Matched();
+            }
         }
     }
 
+    public void InvisibleCard()
+    {
+        frontImage.enabled = false;
+        BackImage.enabled = false;
+        text.enabled = false;
+    }
     public void DestoryCard()
     {
-        Invoke("DestoryCardInvoke", 0.5f);
+        CanOpen = false;
+        Invoke("ParticlePlay", 0.3f);
+        Invoke("DestoryCardInvoke", 0.8f);
     }
 
+    void ParticlePlay()
+    {
+        Particle.Play();
+    }
     void DestoryCardInvoke()
     {
         Destroy(gameObject);
-
     }
     public void CloseCard()
     {
@@ -77,7 +98,6 @@ public class Card : MonoBehaviour
     public void CloseCardInvoke()
     {
         animator.SetBool("IsOpen", false);
-        front.SetActive(false);
-        back.SetActive(true);
+        CanOpen = true;
     }
 }
