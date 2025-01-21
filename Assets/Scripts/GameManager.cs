@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     }
 
     public Text timeText;
-    float time = 0.00f;
+    float time = 60.00f;
 
     public GameObject endText;
 
@@ -33,12 +33,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
+
+        time = DifficultyManager.instance.settedTime;
     }
 
     private void Update()
     {
-        time += Time.deltaTime;
-        if (time > 30.0f)
+        time -= Time.deltaTime;
+        if (time <= 0.0f)
         {
             Time.timeScale = 0.0f;
             // game over

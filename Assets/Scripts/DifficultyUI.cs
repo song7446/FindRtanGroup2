@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class DifficultyUI : MonoBehaviour
 {
-
     // Update is called once per frame
     void Update()
     {
