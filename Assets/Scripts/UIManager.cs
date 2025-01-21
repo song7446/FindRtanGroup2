@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
             result.text = "GAME CLEAR!";
             resultImage.sprite = Resources.Load<Sprite>("face_0");
             // 시도 횟수 추가 할것
-            //tryTxt.text = ?;
+            tryTxt.text = GameManager.Instance.matchCount.ToString();
             matchTxt.text = startCardCount.ToString();
         }
         // game over
@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
             result.text = "GAME OVER";
             resultImage.sprite = Resources.Load<Sprite>("face_1");
             // 시도 횟수 추가 할것
-            //tryTxt.text = ?;
+            tryTxt.text = GameManager.Instance.matchCount.ToString();
             matchTxt.text = (startCardCount - GameManager.Instance.cardCount).ToString();
         }
     }
