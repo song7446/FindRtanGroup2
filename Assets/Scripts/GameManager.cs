@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Text timeText;
     public Text tryText;
     float time = 60.00f;
+    float fastTime = 60.00f;
 
     public GameObject endText;
 
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         time = DifficultyManager.instance.settedTime;
+        fastTime = DifficultyManager.instance.settedTime/3.0f;
     }
 
     private void Update()
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
             }
         }
         //배속브금 조건
-        else if (time >= 20.0f && !fastSound)
+        else if (time <= fastTime && !fastSound)
         {
             //브금 빠르게 변경
             AudioManager.instance.FastSound();

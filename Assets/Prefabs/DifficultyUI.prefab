@@ -354,7 +354,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1574988822920178013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5032551553461517280}
+        m_TargetAssemblyTypeName: DifficultySelectButton, Assembly-CSharp
+        m_MethodName: SettingStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5032551553461517280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2c8f5510c825419b963f02ddb6a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage: 3
+  stage: 2
 --- !u!1 &3672111211787823651
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +501,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615301449139437304}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3955546277444151268}
+        m_TargetAssemblyTypeName: DifficultySelectButton, Assembly-CSharp
+        m_MethodName: SettingStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3955546277444151268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2c8f5510c825419b963f02ddb6a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage: 1
+  stage: 0
 --- !u!1 &4917064119639496514
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2944475776361961964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,7 +779,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1419226158055995418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4185298073477537764}
+        m_TargetAssemblyTypeName: DifficultySelectButton, Assembly-CSharp
+        m_MethodName: SettingStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4185298073477537764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,4 +804,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2c8f5510c825419b963f02ddb6a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage: 2
+  stage: 1
