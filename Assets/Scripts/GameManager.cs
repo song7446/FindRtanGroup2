@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public Text timeText;
     public Text tryText;
-    float time = 0.00f;
+    float time = 60.00f;
 
     public GameObject endText;
 
@@ -39,14 +39,16 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
+
+        time = DifficultyManager.instance.settedTime;
     }
 
     private void Update()
     {
-        time += Time.deltaTime;
-        if (time > 40.0f)
+        time -= Time.deltaTime;
+        if (time <= 0.0f)
         {
-            
+
             Time.timeScale = 0.0f;
             // game over
             UIManager.Instance.OpenResult(false);
@@ -72,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
     public void Matched()
     {
         if (firstCard.idx == secondCard.idx)
