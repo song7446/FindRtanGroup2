@@ -21,14 +21,42 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip clip;
+    // 클립 추가
+    public AudioClip fastClip;
+    public AudioClip winClip;
+    public AudioClip loseClip;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        NormalSound();
+    }
+
+    public void NormalSound()
+    {
         audioSource.clip = this.clip;
+        audioSource.pitch = 1.0f;
+        audioSource.Play();
+    }
+    public void FastSound()
+    {
+        audioSource.clip = this.fastClip;
+        audioSource.pitch = 1.3f;
+        audioSource.Play();
+    }
+    public void WinSound()
+    {
+        audioSource.clip = this.winClip;
+        audioSource.pitch = 1.0f;
+        audioSource.Play();
+    }
+    public void LoseSound()
+    {
+        audioSource.clip = this.loseClip;
+        audioSource.pitch = 1.0f;
         audioSource.Play();
     }
 

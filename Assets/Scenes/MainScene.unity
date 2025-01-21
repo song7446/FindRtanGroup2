@@ -556,7 +556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8146c9aa3f5ad4388303aeabd039c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 708ec2922457a3b47a0a56e756254b3b, type: 3}
+  audioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: 3cf66487fe239a541a277ebb3ee91d67, type: 3}
+  fastClip: {fileID: 8300000, guid: 3cf66487fe239a541a277ebb3ee91d67, type: 3}
+  winClip: {fileID: 8300000, guid: b0c24b647ba23a04db9ea0626f0e577b, type: 3}
+  loseClip: {fileID: 8300000, guid: e2fd4d2a4a1c8314f9b26a669dfdcb8d, type: 3}
 --- !u!4 &103431192
 Transform:
   m_ObjectHideFlags: 0
@@ -1095,6 +1099,7 @@ MonoBehaviour:
   timeText: {fileID: 1428079587}
   endText: {fileID: 2098171676}
   cardCount: 0
+  matchCount: 0
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   clip: {fileID: 8300000, guid: 2c0bc21a2c4c2964c91dd5f076153ed0, type: 3}
