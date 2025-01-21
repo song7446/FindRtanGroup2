@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     AudioSource audioSource;
     public AudioClip clip;
 
+    //Update()에서 한번만 실행하게끔 - Audio
+    bool fastSound = false;
+    bool loseSound = false;
     private void Start()
     {
         Time.timeScale = 1.0f;
@@ -46,6 +49,20 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0.0f;
             // game over
             UIManager.Instance.OpenResult(false);
+            //패배브금 조건
+            if (!loseSound)
+            {
+                //게임 종료시 메인 브금 정지 패배 브금
+                AudioManager.instance.LoseSound();
+                loseSound = true;
+            }
+        }
+        //배속브금 조건
+        else if (time >= 20.0f && !fastSound)
+        {
+            //브금 빠르게 변경
+            AudioManager.instance.FastSound();
+            fastSound = true;
         }
         timeText.text = time.ToString("N2");
     }
@@ -68,6 +85,8 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0.0f;
                 UIManager.Instance.OpenResult(true);
+                //게임 종료시 메인 브금 정지 승리 브금
+                AudioManager.instance.WinSound();
             }
         }
         else

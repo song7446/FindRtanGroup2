@@ -69,11 +69,15 @@ public class UIManager : MonoBehaviour
     }
     public void Restart()
     {
+        // 게임 재시작할때 재생 안되어서 재생성 하게끔
+        Destroy(AudioManager.instance.gameObject);
         // reload now scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void BackToMain()
     {
+        // 게임 재시작할때 재생 안되어서 재생성 하게끔
+        Destroy(AudioManager.instance.gameObject);
         SceneManager.LoadScene("StartScene");
     }
 
