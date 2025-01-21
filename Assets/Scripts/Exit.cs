@@ -9,6 +9,6 @@ public class ExitButton : MonoBehaviour
     // Start is called before the first frame update
     public void Exit()
     {
-        SceneManager.LoadScene("ExitScene");
+        Application.Quit();
     }
 }

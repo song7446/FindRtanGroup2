@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject endText;
 
+    public GameObject TryCount;
+
     public int cardCount = 0;
     public int matchCount = 0;
 
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
         time += Time.deltaTime;
         if (time > 30.0f)
         {
+            
             Time.timeScale = 0.0f;
             // game over
             UIManager.Instance.OpenResult(false);
@@ -47,6 +50,11 @@ public class GameManager : MonoBehaviour
         timeText.text = time.ToString("N2");
     }
 
+    public void GameExit()
+    {
+        Application.Quit();
+    }
+    
     public void Matched()
     {
         if (firstCard.idx == secondCard.idx)
