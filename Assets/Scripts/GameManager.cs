@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     }
 
     public Text timeText;
+    public Text tryText;
     float time = 0.00f;
 
     public GameObject endText;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if (time > 30.0f)
+        if (time > 40.0f)
         {
             
             Time.timeScale = 0.0f;
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
             secondCard.CloseCard();
         }
         matchCount++;
+        tryText.text = matchCount.ToString();
         firstCard = null;
         secondCard = null;
     }
