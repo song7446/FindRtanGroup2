@@ -400,6 +400,8 @@ MonoBehaviour:
   _androidGameId: 5777103
   _iOSGameId: 5777102
   _testMode: 1
+  _androidAdUnitId: Rewarded_Android
+  _iOSAdUnitId: Rewarded_iOS
 --- !u!4 &447333725
 Transform:
   m_ObjectHideFlags: 0
