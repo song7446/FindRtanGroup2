@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject endText;
 
     public int cardCount = 0;
+    public int matchCount = 0;
 
     public Card firstCard;
     public Card secondCard;
@@ -40,7 +41,8 @@ public class GameManager : MonoBehaviour
         if (time > 30.0f)
         {
             Time.timeScale = 0.0f;
-            endText.SetActive(true);
+            // game over
+            UIManager.Instance.OpenResult(false);
         }
         timeText.text = time.ToString("N2");
     }
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         if (firstCard.idx == secondCard.idx)
         {
-            // �ı�
+            // ÆÄ±«
             audioSource.PlayOneShot(clip);
             firstCard.DestoryCard();
             secondCard.DestoryCard();
@@ -57,16 +59,16 @@ public class GameManager : MonoBehaviour
             if (cardCount == 0)
             {
                 Time.timeScale = 0.0f;
-                endText.SetActive(true);
+                UIManager.Instance.OpenResult(true);
             }
         }
         else
         {
-            // �ݾƶ�
+            // ´Ý¾Æ¶ó
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
-
+        matchCount++;
         firstCard = null;
         secondCard = null;
     }
