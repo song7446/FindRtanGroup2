@@ -7,12 +7,10 @@ using UnityEngine.UI;
 public class SettingUI : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    [SerializeField]
-    Slider slider;
+    public Slider slider;
 
     public void Start()
     {
-        slider = GetComponent<Slider>();
         LoadAudioSetting();
     }
     //Unity는 -80~0의 범위를 가진 변수로 볼륨을 조절한다.(-80은 음소거)
