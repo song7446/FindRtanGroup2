@@ -25,7 +25,7 @@ public class Card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CanOpen = true;
+        CanOpen = false;
         audioSource = GetComponent<AudioSource>();
         Particle = GetComponent<ParticleSystem>();
     }
@@ -104,5 +104,15 @@ public class Card : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         CanOpen = true;
+    }
+
+    public void Open_Enable()
+    {
+        CanOpen = true;
+    }
+
+    public void Open_Disable()
+    {
+        CanOpen = false;
     }
 }

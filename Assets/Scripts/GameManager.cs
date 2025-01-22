@@ -37,8 +37,11 @@ public class GameManager : MonoBehaviour
     //Update()에서 한번만 실행하게끔 - Audio
     bool fastSound = false;
     bool loseSound = false;
+    [SerializeField]
+    bool StopTimer;
     private void Start()
     {
+        StopTimer = true;
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
 
@@ -48,7 +51,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        time -= Time.deltaTime;
+        if (StopTimer != true)
+            time -= Time.deltaTime;
         if (time <= 0.0f)
         {
 
@@ -76,6 +80,15 @@ public class GameManager : MonoBehaviour
         timeText.text = time.ToString("N2");
     }
 
+    public void TimerStart()
+    {
+        StopTimer = false;
+    }
+
+    public void TimerStop()
+    {
+        StopTimer = true;
+    }
     public void GameExit()
     {
         Application.Quit();
