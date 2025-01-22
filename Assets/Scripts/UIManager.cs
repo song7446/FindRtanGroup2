@@ -54,6 +54,8 @@ public class UIManager : MonoBehaviour
             // 시도 횟수 추가 할것
             tryTxt.text = GameManager.Instance.matchCount.ToString();
             matchTxt.text = startCardCount.ToString();
+
+            DifficultyManager.instance.stageOpen();
         }
         // game over
         else
