@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip clip;
+    public AudioClip failClip;
 
     //Update()에서 한번만 실행하게끔 - Audio
     bool fastSound = false;
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         time = DifficultyManager.instance.settedTime;
-        fastTime = DifficultyManager.instance.settedTime/3.0f;
+        fastTime = time /3.0f;
     }
 
     private void Update()
@@ -68,6 +69,9 @@ public class GameManager : MonoBehaviour
             //브금 빠르게 변경
             AudioManager.instance.FastSound();
             fastSound = true;
+
+            // trigger Animation
+            timeText.GetComponent<Animator>().SetTrigger("Fast");
         }
         timeText.text = time.ToString("N2");
     }
@@ -81,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         if (firstCard.idx == secondCard.idx)
         {
-            // ÆÄ±«
+            // success
             audioSource.PlayOneShot(clip);
             firstCard.DestoryCard();
             secondCard.DestoryCard();
@@ -96,7 +100,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // ´Ý¾Æ¶ó
+            // fail
+            audioSource.PlayOneShot(failClip);
             firstCard.CloseCard();
             secondCard.CloseCard();
         }

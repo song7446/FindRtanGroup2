@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text matchTxt;
     [SerializeField] private Button retryButton;
     [SerializeField] private Button mainButton;
+    [SerializeField] private Board board;
 
     int startCardCount;
     void Awake()
@@ -27,8 +28,13 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //startCardCount = GameManager.Instance.cardCount;
-        startCardCount = 20;
+        if(board != null)
+            startCardCount = board.deck;
+        else
+        {
+            board = FindFirstObjectByType<Board>();
+            startCardCount = board.deck;
+        }
         EndUI.SetActive(false);
 
         // 버튼에 함수 연결
@@ -51,8 +57,9 @@ public class UIManager : MonoBehaviour
             Answer.SetActive(true);
             result.text = "GAME CLEAR!";
             resultImage.sprite = Resources.Load<Sprite>("face_0");
-            // 시도 횟수 추가 할것
+            // 시도 횟수
             tryTxt.text = GameManager.Instance.matchCount.ToString();
+            // 맞춘 횟수
             matchTxt.text = startCardCount.ToString();
         }
         // game over
@@ -64,6 +71,7 @@ public class UIManager : MonoBehaviour
             resultImage.sprite = Resources.Load<Sprite>("face_1");
             // 시도 횟수 추가 할것
             tryTxt.text = GameManager.Instance.matchCount.ToString();
+            // 맞춘 횟수
             matchTxt.text = (startCardCount - GameManager.Instance.cardCount).ToString();
         }
     }

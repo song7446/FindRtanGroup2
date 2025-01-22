@@ -40,6 +40,11 @@ public class Card : MonoBehaviour
     {
         idx = number;
         frontImage.sprite = Resources.Load<Sprite>($"Im{idx}");
+        if (number >= 10 && number < 20)
+        {
+            int rtan = number % 10;
+            frontImage.sprite = Resources.Load<Sprite>($"rant{rtan}");
+        }
     }
 
     public void OpenCard()
