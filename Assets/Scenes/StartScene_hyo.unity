@@ -354,6 +354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401791002bf81174ebff224cb72af64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SettingCanvas: {fileID: 0}
+  StartButton: {fileID: 0}
+  DifficultyButton: {fileID: 0}
+  ExitButton: {fileID: 0}
 --- !u!114 &212273923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,6 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyUI: {fileID: 73111558}
+  BtnArr: []
 --- !u!114 &1996105687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,6 +1302,8 @@ MonoBehaviour:
   - 45
   - 30
   settedTime: 60
+  settedStage: 0
+  stageClear: 010000
 --- !u!4 &2069648436
 Transform:
   m_ObjectHideFlags: 0
