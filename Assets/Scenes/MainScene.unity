@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 1428079586}
   - component: {fileID: 1428079588}
   - component: {fileID: 1428079587}
+  - component: {fileID: 1428079589}
   m_Layer: 5
   m_Name: TimeTxt
   m_TagString: Untagged
@@ -919,6 +920,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428079585}
   m_CullTransparentMesh: 1
+--- !u!95 &1428079589
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428079585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a96016fb02ac3bc40a635c794735a693, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1517095251
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 650410895568139416, guid: 88da7e0e05c185d4282552546bce08fd, type: 3}
+  deck: 20
 --- !u!1 &1772752026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1025,7 @@ MonoBehaviour:
   matchTxt: {fileID: 21682506}
   retryButton: {fileID: 21682505}
   mainButton: {fileID: 21682504}
+  board: {fileID: 0}
 --- !u!4 &1772752028
 Transform:
   m_ObjectHideFlags: 0
@@ -1352,6 +1376,10 @@ PrefabInstance:
       propertyPath: TryCount
       value: 
       objectReference: {fileID: 1951405705}
+    - target: {fileID: 5312527868991607139, guid: 2f454307111e699469b5f24eeba54748, type: 3}
+      propertyPath: failClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 57d53b1544f8cf24d956c009ca2174a8, type: 3}
     - target: {fileID: 5312527868991607139, guid: 2f454307111e699469b5f24eeba54748, type: 3}
       propertyPath: timeText
       value: 
