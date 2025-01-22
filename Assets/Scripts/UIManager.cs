@@ -61,6 +61,8 @@ public class UIManager : MonoBehaviour
             tryTxt.text = GameManager.Instance.matchCount.ToString();
             // 맞춘 횟수
             matchTxt.text = startCardCount.ToString();
+
+            DifficultyManager.instance.stageOpen();
         }
         // game over
         else

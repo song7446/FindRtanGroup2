@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DifficultySelectButton : MonoBehaviour
 {
@@ -9,5 +10,6 @@ public class DifficultySelectButton : MonoBehaviour
     public void SettingStage()
     {
         DifficultyManager.instance.timeSet(stage);
+        SceneManager.LoadScene("MainScene");
     }
 }
