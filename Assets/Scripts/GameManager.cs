@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         else if (time <= fastTime && !fastSound)
         {
             //브금 빠르게 변경
-            AudioManager.instance.FastSound();
+            AudioManager.instance.audioSource.pitch = 1.3f;
             fastSound = true;
 
             // trigger Animation

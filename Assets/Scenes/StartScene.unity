@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448505596290600048, guid: 851ab136082a9eb40b218e62d611e20e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2507,6 +2507,7 @@ MonoBehaviour:
   fastClip: {fileID: 8300000, guid: 3cf66487fe239a541a277ebb3ee91d67, type: 3}
   winClip: {fileID: 8300000, guid: b0c24b647ba23a04db9ea0626f0e577b, type: 3}
   loseClip: {fileID: 8300000, guid: e2fd4d2a4a1c8314f9b26a669dfdcb8d, type: 3}
+  hiddenClip: {fileID: 8300000, guid: ba9f37992e5f1c74680601c8888fb5f4, type: 3}
 --- !u!1 &9182300104490959891
 GameObject:
   m_ObjectHideFlags: 0
