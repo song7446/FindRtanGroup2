@@ -17,6 +17,13 @@ public class Board : MonoBehaviour
             arr[i] = i / 2;
         }
         arr = arr.OrderBy(x => Random.Range(0f, deck / 2.0f)).ToArray();
+        boardSetting();
+    }
+
+    public void boardSetting()
+    {
+        int[] arr = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9 };
+        arr = arr.OrderBy(x => Random.Range(0f, 9f)).ToArray();
 
         for (int i = 0; i < deck; i++)
         {

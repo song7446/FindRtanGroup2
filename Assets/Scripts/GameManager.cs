@@ -110,4 +110,30 @@ public class GameManager : MonoBehaviour
         firstCard = null;
         secondCard = null;
     }
+
+    public void infinityMatched()
+    {
+        if (firstCard.idx == secondCard.idx)
+        {
+            audioSource.PlayOneShot(clip);
+            firstCard.DestoryCard();
+            secondCard.DestoryCard();
+            cardCount -= 2;
+            time += 3.0f;
+            if (cardCount == 0)
+            {
+                Board board = GameObject.Find("Board").GetComponent<Board>();
+                board.Invoke("boardSetting", 0.7f);
+            }
+        }
+        else
+        {
+            // ´Ý¾Æ¶ó
+            firstCard.CloseCard();
+            secondCard.CloseCard();
+        }
+        matchCount++;
+        firstCard = null;
+        secondCard = null;
+    }
 }

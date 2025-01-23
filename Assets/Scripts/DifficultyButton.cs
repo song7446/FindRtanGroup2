@@ -12,17 +12,11 @@ public class DifficultyButton : MonoBehaviour
 
     public void Difficulty()
     {
+        Debug.Log(BtnArr.Length);
         DifficultyUI.SetActive(true);
         for (int i = 0; i < BtnArr.Length; i++)
-        {
-            if (DifficultyManager.instance.stageClear[i])
-            {
-                BtnArr[i].SetActive(true);
-            }
-            else
-            {
-                BtnArr[i].SetActive(false);
-            }
+        {    
+            BtnArr[i].SetActive(DifficultyManager.instance.stageClear[i]);
         }
     }
 }
