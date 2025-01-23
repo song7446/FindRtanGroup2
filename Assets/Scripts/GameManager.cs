@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
     bool loseSound = false;
     [SerializeField]
     bool StopTimer;
-
+    [SerializeField] private Color[] backColors;
+    [SerializeField] SpriteRenderer BackGround;
     private void Start()
     {
         StopTimer = true;
@@ -48,6 +49,8 @@ public class GameManager : MonoBehaviour
 
         time = DifficultyManager.instance.settedTime;
         fastTime = time / 3.0f;
+        //BackGround
+        BackGround.color = backColors[DifficultyManager.instance.settedStage];
     }
 
     private void Update()
@@ -97,6 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void Matched()
     {
+        matchCount++;
         if (firstCard.idx == secondCard.idx)
         {
             // success
@@ -104,7 +108,6 @@ public class GameManager : MonoBehaviour
             firstCard.DestoryCard();
             secondCard.DestoryCard();
             cardCount -= 2;
-            
             if (DifficultyManager.instance.settedStage == 3)
                 time += 3.0f;
 
@@ -131,34 +134,8 @@ public class GameManager : MonoBehaviour
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
-        matchCount++;
+        
         tryText.text = matchCount.ToString();
-        firstCard = null;
-        secondCard = null;
-    }
-
-    public void infinityMatched()
-    {
-        if (firstCard.idx == secondCard.idx)
-        {
-            audioSource.PlayOneShot(clip);
-            firstCard.DestoryCard();
-            secondCard.DestoryCard();
-            cardCount -= 2;
-            time += 3.0f;
-            if (cardCount == 0)
-            {
-                Board board = GameObject.Find("Board").GetComponent<Board>();
-                board.Invoke("boardSetting", 0.7f);
-            }
-        }
-        else
-        {
-            // ´Ý¾Æ¶ó
-            firstCard.CloseCard();
-            secondCard.CloseCard();
-        }
-        matchCount++;
         firstCard = null;
         secondCard = null;
     }

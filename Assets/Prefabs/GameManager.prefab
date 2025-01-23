@@ -46,12 +46,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 0}
+  tryText: {fileID: 0}
   endText: {fileID: 0}
+  TryCount: {fileID: 0}
   cardCount: 0
   matchCount: 0
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   clip: {fileID: 8300000, guid: 2c0bc21a2c4c2964c91dd5f076153ed0, type: 3}
+  failClip: {fileID: 0}
+  StopTimer: 0
+  backColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.74509805, b: 0.7294118, a: 1}
+  - {r: 1, g: 0.48235294, b: 0.4509804, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  BackGround: {fileID: 0}
 --- !u!82 &5535870744380205585
 AudioSource:
   m_ObjectHideFlags: 0

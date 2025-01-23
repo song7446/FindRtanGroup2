@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text tryTxt;
     [SerializeField] private Text matchTxt;
     [SerializeField] private Button retryButton;
+    [SerializeField] private Text reTryTxt;
     [SerializeField] private Button mainButton;
     [SerializeField] private Board board;
 
@@ -61,7 +62,7 @@ public class UIManager : MonoBehaviour
             tryTxt.text = GameManager.Instance.matchCount.ToString();
             // 맞춘 횟수
             matchTxt.text = startCardCount.ToString();
-
+            reTryTxt.text = "Next";
             DifficultyManager.instance.stageOpen();
         }
         // game over
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviour
             tryTxt.text = GameManager.Instance.matchCount.ToString();
             // 맞춘 횟수
             matchTxt.text = (startCardCount - GameManager.Instance.cardCount).ToString();
+            reTryTxt.text = "Retry";
         }
     }
     public void Restart()
