@@ -9,6 +9,7 @@ public class DifficultySelectButton : MonoBehaviour
 
     public void SettingStage()
     {
+        Debug.Log(stage);
         DifficultyManager.instance.timeSet(stage);
         SceneManager.LoadScene("MainScene");
     }

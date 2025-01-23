@@ -22,11 +22,11 @@ public class DifficultyManager : MonoBehaviour
         }
     }
 
-    public float[] timeArr = { 60.0f, 45.0f, 30.0f };
+    public float[] timeArr = { 60.0f, 45.0f, 30.0f, 60.0f };
     public float settedTime = 60.0f;
     public int settedStage = 0;
 
-    public bool[] stageClear = {true, false, false };
+    public bool[] stageClear = { true, false, false, false };
 
     public void timeSet(int stage)
     {
