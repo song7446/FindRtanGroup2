@@ -1025,6 +1025,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 343808484}
   deck: 20
   CardSlideSpeed: 8
+  CardSlideTime: 0.2
   audio: {fileID: 123491480}
   SlideSound: {fileID: 8300000, guid: e3a1bfd98c60afd4284e5d1e681d1461, type: 3}
   CardCompleteCount: 0
