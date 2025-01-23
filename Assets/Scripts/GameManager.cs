@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     bool loseSound = false;
     [SerializeField]
     bool StopTimer;
-    
+
     private void Start()
     {
         StopTimer = true;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         time = DifficultyManager.instance.settedTime;
-        fastTime = time /3.0f;
+        fastTime = time / 3.0f;
     }
 
     private void Update()
@@ -104,12 +104,24 @@ public class GameManager : MonoBehaviour
             firstCard.DestoryCard();
             secondCard.DestoryCard();
             cardCount -= 2;
+            
+            if (DifficultyManager.instance.settedStage == 3)
+                time += 3.0f;
+
             if (cardCount == 0)
             {
-                Time.timeScale = 0.0f;
-                UIManager.Instance.OpenResult(true);
-                //게임 종료시 메인 브금 정지 승리 브금
-                AudioManager.instance.WinSound();
+                if (DifficultyManager.instance.settedStage == 3)
+                {
+                    Board board = GameObject.Find("Board").GetComponent<Board>();
+                    board.Invoke("boardSetting", 0.7f);
+                }
+                else
+                {
+                    Time.timeScale = 0.0f;
+                    UIManager.Instance.OpenResult(true);
+                    //게임 종료시 메인 브금 정지 승리 브금
+                    AudioManager.instance.WinSound();
+                }
             }
         }
         else

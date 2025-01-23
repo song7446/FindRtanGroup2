@@ -69,14 +69,9 @@ public class Card : MonoBehaviour
                 // firstCard가 비어있지 않다면
                 // secondCard에 내 정보를 넘겨준다
                 GameManager.Instance.secondCard = this;
-                if (DifficultyManager.instance.settedStage == 3)
-                {
-                    GameManager.Instance.infinityMatched();
-                }
-                else
-                {
-                    GameManager.Instance.Matched();
-                }
+
+                GameManager.Instance.Matched();
+
             }
         }
     }
