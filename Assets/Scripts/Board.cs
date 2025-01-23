@@ -19,6 +19,12 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        boardSetting();
+    }
+
+    public void boardSetting()
+    {
         int[] arr = new int[deck];
         // {0,0, 1,1, 2, 2, ...}
         for (int i = 0; i < arr.Length; i++)
@@ -26,13 +32,6 @@ public class Board : MonoBehaviour
             arr[i] = i / 2;
         }
         arr = arr.OrderBy(x => Random.Range(0f, deck / 2.0f)).ToArray();
-        boardSetting();
-    }
-
-    public void boardSetting()
-    {
-        int[] arr = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9 };
-        arr = arr.OrderBy(x => Random.Range(0f, 9f)).ToArray();
 
         CardTargetPos = new Vector2[deck];
         CardItem = new GameObject[deck];
@@ -68,6 +67,8 @@ public class Board : MonoBehaviour
     //카드 배치
     IEnumerator GameStart(GameObject[] CardIt)
     {
+        GameManager.Instance.TimerStop();
+        CardCompleteCount = 0;
         for (int i = 0; i < deck; i++)
         {
             audio.PlayOneShot(SlideSound);
@@ -78,7 +79,7 @@ public class Board : MonoBehaviour
         yield return null;
     }
     //카드 배치22
-    IEnumerator SlideMove(GameObject InputCard,Vector3 TargetPos)
+    IEnumerator SlideMove(GameObject InputCard, Vector3 TargetPos)
     {
         TargetPos = new Vector3(TargetPos.x, TargetPos.y, InputCard.transform.position.z);
         float Totaldistance = Vector3.Distance(InputCard.transform.position, TargetPos);

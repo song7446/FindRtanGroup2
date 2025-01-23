@@ -376,7 +376,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyUI: {fileID: 73111558}
-  BtnArr: []
+  BtnArr:
+  - {fileID: 280140004}
+  - {fileID: 1551685136}
+  - {fileID: 1326627029}
+  - {fileID: 323002678}
 --- !u!114 &122986535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +475,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122986531}
   m_CullTransparentMesh: 1
+--- !u!1 &280140004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3672111211787823651, guid: 851ab136082a9eb40b218e62d611e20e, type: 3}
+  m_PrefabInstance: {fileID: 73111556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &323002678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1920996965452013789, guid: 851ab136082a9eb40b218e62d611e20e, type: 3}
+  m_PrefabInstance: {fileID: 73111556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &323637778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,9 +1042,10 @@ MonoBehaviour:
   - 60
   - 45
   - 30
+  - 30
   settedTime: 60
   settedStage: 0
-  stageClear: 010000
+  stageClear: 01000000
 --- !u!4 &1023731235
 Transform:
   m_ObjectHideFlags: 0
@@ -1681,6 +1696,16 @@ RectTransform:
   m_AnchoredPosition: {x: 380, y: 640}
   m_SizeDelta: {x: 760, y: 1280}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1326627029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3140024079389088873, guid: 851ab136082a9eb40b218e62d611e20e, type: 3}
+  m_PrefabInstance: {fileID: 73111556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1551685136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8754933990233744820, guid: 851ab136082a9eb40b218e62d611e20e, type: 3}
+  m_PrefabInstance: {fileID: 73111556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1696362597
 GameObject:
   m_ObjectHideFlags: 0

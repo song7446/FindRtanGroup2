@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     bool loseSound = false;
     [SerializeField]
     bool StopTimer;
+    
     private void Start()
     {
         StopTimer = true;
